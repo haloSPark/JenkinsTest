@@ -33,12 +33,16 @@ android {
                     variant.outputs.each { output ->
                         def outputFile = output.outputFile
                         if (outputFile != null && outputFile.name.endsWith('.apk')) {
-                            def fileName = "${releaseTime()}_com.andli.myproject_${defaultConfig.versionName}.apk"
-                            output.outputFile = new File("/Users/nullop/Downloads/APK", fileName)
+                            def fileName = "${releaseTime()}_com.example.nullop.jenkinstest_${defaultConfig.versionName}.apk"
+                            output.outputFile = new File(outputFile.parent, fileName)
                         }
                     }
                 }
             }
+        }
+
+        debug{
+
         }
     }
 
