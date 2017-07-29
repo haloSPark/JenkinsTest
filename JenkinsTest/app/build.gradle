@@ -28,19 +28,18 @@ android {
             shrinkResources false   //是否移除无用的resource文件
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release//打包命令行：gradlew assembleRelease
-            applicationVariants.all { variant ->
-                variant.outputs.each { output ->
-                    def outputFile = output.outputFile
-                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
-                        def fileName = "${releaseTime()}_com.example.nullop.jenkinstest_${defaultConfig.versionName}.apk"
-                        output.outputFile = new File(outputFile.parent, fileName)
-                    }
+
+
+    }
+
+        applicationVariants.all { variant ->
+            variant.outputs.each { output ->
+                def outputFile = output.outputFile
+                if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                    def fileName = "${releaseTime()}_com.example.nullop.jenkinstest_${defaultConfig.versionName}.apk"
+                    output.outputFile = new File(outputFile.parent, fileName)
                 }
             }
-        }
-
-        debug {
-
         }
     }
 
