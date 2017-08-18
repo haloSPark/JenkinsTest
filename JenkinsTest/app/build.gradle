@@ -27,7 +27,7 @@ android {
             zipAlignEnabled false   //是否启动zipAlign
             shrinkResources false   //是否移除无用的resource文件
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release//打包命令行：gradlew assembleRelease
+//            signingConfig signingConfigs.release//打包命令行：gradlew assembleRelease
 
 
     }
